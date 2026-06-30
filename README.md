@@ -1,56 +1,48 @@
-# NLP Sentiment Classifier
+# 📷 Real-Time Face Detection using OpenCV
 
-## 📌 Project Overview
+## 📌 Overview
 
-This project is a Machine Learning-based Sentiment Analysis application that classifies movie reviews as **Positive** or **Negative** using Natural Language Processing (NLP) techniques.
+This project implements a **real-time face detection system** using **OpenCV** and the **Haar Cascade Classifier**. It captures live video from the webcam, detects human faces, and draws bounding boxes around them in real time.
 
-The model is trained on the IMDb Movie Reviews dataset using **TF-IDF Vectorization** and **Logistic Regression** from Scikit-learn.
+---
+
+## 🎯 Objectives
+
+* Access the webcam using OpenCV
+* Detect human faces in real time
+* Draw bounding boxes around detected faces
+* Learn the fundamentals of Computer Vision
 
 ---
 
 ## 🚀 Features
 
-* Load IMDb movie review dataset
-* Clean and preprocess review text
-* Convert text into numerical features using TF-IDF
-* Train a Logistic Regression model
-* Evaluate model performance
-* Display:
-
-  * Accuracy
-  * Classification Report
-  * Confusion Matrix
-* Save trained model and vectorizer
-* Predict sentiment for new user reviews
+* 📷 Real-time webcam access
+* 😊 Face detection using Haar Cascade Classifier
+* 🟩 Bounding boxes around detected faces
+* ⚡ Fast and lightweight implementation
+* ❌ Press **Q** to exit the application
 
 ---
 
-## 🛠 Technologies Used
+## 🛠️ Technologies Used
 
 * Python
-* Pandas
-* NumPy
-* Scikit-learn
-* Joblib
-* Regular Expressions (Regex)
+* OpenCV
+* Haar Cascade Classifier
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
-```
-NLP_Sentiment_Classifier/
+```text
+Computer_Vision_Face_Detection/
 │
-├── data/
-│   └── IMDB Dataset.csv
-│
-├── models/
-│   ├── model.pkl
-│   └── vectorizer.pkl
+├── haarcascade/
+│   └── haarcascade_frontalface_default.xml
 │
 ├── src/
-│   ├── train.py
-│   └── predict.py
+│   └── face_detection.py
 │
 ├── requirements.txt
 └── README.md
@@ -58,48 +50,32 @@ NLP_Sentiment_Classifier/
 
 ---
 
-## 📥 Dataset
+## ⚙️ Installation
 
-Download the IMDb Movie Reviews dataset from Kaggle and place it inside the `data` folder.
-
-Dataset Name:
-
-```
-IMDB Dataset.csv
-```
-
----
-
-## ⚙ Installation
-
-Clone the repository:
+### 1. Clone the repository
 
 ```bash
 git clone <repository-url>
-cd NLP_Sentiment_Classifier
+cd Computer_Vision_Face_Detection
 ```
 
-Create a virtual environment (optional):
+### 2. Create a virtual environment (Optional)
+
+**Windows**
 
 ```bash
 python -m venv venv
-```
-
-Activate it:
-
-Windows
-
-```bash
 venv\Scripts\activate
 ```
 
-Linux / macOS
+**Linux / macOS**
 
 ```bash
+python3 -m venv venv
 source venv/bin/activate
 ```
 
-Install dependencies:
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -107,120 +83,71 @@ pip install -r requirements.txt
 
 ---
 
-## ▶ Train the Model
+## 📥 Download Haar Cascade File
 
-Run:
+Download the file:
+
+```text
+haarcascade_frontalface_default.xml
+```
+
+Place it inside the `haarcascade/` folder.
+
+---
+
+## ▶️ Run the Project
 
 ```bash
-python src/train.py
-```
-
-The script will:
-
-* Load the dataset
-* Clean the reviews
-* Train the model
-* Evaluate performance
-* Save the trained model
-
----
-
-## ▶ Predict Sentiment
-
-Run:
-
-```bash
-python src/predict.py
-```
-
-Example:
-
-```
-Enter Review:
-
-This movie was amazing!
-
-Positive Review
-```
-
-```
-Enter Review:
-
-Worst movie ever.
-
-Negative Review
-```
-
-Type:
-
-```
-exit
-```
-
-to quit the application.
-
----
-
-## 📊 Machine Learning Pipeline
-
-```
-IMDb Reviews
-      │
-      ▼
-Text Cleaning
-      │
-      ▼
-TF-IDF Vectorization
-      │
-      ▼
-Train/Test Split
-      │
-      ▼
-Logistic Regression
-      │
-      ▼
-Prediction
-      │
-      ▼
-Positive / Negative
+python src/face_detection.py
 ```
 
 ---
 
-## 📈 Evaluation Metrics
+## 🔄 Workflow
 
-The model reports:
-
-* Accuracy
-* Precision
-* Recall
-* F1-Score
-* Confusion Matrix
+```text
+Start Webcam
+      │
+      ▼
+Capture Video Frame
+      │
+      ▼
+Convert Frame to Grayscale
+      │
+      ▼
+Detect Faces
+      │
+      ▼
+Draw Bounding Boxes
+      │
+      ▼
+Display Live Video
+```
 
 ---
 
 ## 📚 Skills Demonstrated
 
-* Natural Language Processing (NLP)
-* Text Preprocessing
-* Feature Engineering
-* Machine Learning Classification
-* Model Evaluation
-* Model Persistence using Joblib
+* Computer Vision
+* Real-Time Video Processing
+* Face Detection
+* Image Processing
+* OpenCV
+* Python Programming
 
 ---
 
-## 🔮 Future Improvements
+## 🔮 Future Enhancements
 
-* Support multiple ML algorithms
-* Hyperparameter tuning
-* Streamlit web interface
-* Flask/FastAPI deployment
-* Deep Learning using LSTM or BERT
-* Multi-class sentiment classification
+* Face Recognition
+* Eye Detection
+* Smile Detection
+* Emotion Recognition
+* Face Mask Detection
+* Attendance System
 
 ---
 
 ## 👨‍💻 Author
 
-Developed as part of an AI & Machine Learning learning roadmap to strengthen practical skills in NLP and supervised machine learning.
+This project was developed as part of an AI & Machine Learning learning roadmap to gain practical experience in Computer Vision using OpenCV.
